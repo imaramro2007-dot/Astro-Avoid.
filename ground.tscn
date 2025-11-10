@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://h5e64aublqbe"]
+
+[ext_resource type="Script" uid="uid://ckx5xa4a2hife" path="res://ground.gd" id="1_t7tip"]
+[ext_resource type="Texture2D" uid="uid://ksug1tmfw0a0" path="res://platformmmmm.png" id="2_t7tip"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t7tip"]
+size = Vector2(1708.25, 177)
+
+[node name="Ground" type="Area2D"]
+z_index = 1
+script = ExtResource("1_t7tip")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-356.90204, 860.4208)
+scale = Vector2(1.4033947, 0.7742058)
+texture = ExtResource("2_t7tip")
+offset = Vector2(864, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(851.875, 856)
+shape = SubResource("RectangleShape2D_t7tip")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
